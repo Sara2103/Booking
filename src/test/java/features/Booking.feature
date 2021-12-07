@@ -11,6 +11,8 @@ Feature: Booking accommodation
     And I choose number of person, children and rooms "6" "1" "4" "3"
     And I click button Search
     Then I should see desired choice
+    And I check the budget
+    And I check the distance in the filters
 
 
 

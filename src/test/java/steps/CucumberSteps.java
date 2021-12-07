@@ -54,7 +54,7 @@ public class CucumberSteps extends BaseTest {
     }
 
     @Then("I should see desired choice")
-    public void iShouldSeeDesiredChoice() {
+    public void iShouldSeeDesiredChoice() throws InterruptedException {
         BookingSearchResults bs = new BookingSearchResults(driver, wait);
 
         //Date format: day of the week, DD. month YYYY. / Day of the week DD Month YYYY
@@ -62,9 +62,23 @@ public class CucumberSteps extends BaseTest {
                 "6", "1", "3", "4");
     }
 
+    @And("I check the budget")
+    public void iCheckTheBudget() {
+        BookingSearchResults bs = new BookingSearchResults(driver, wait);
+        bs.checkBudget();
+    }
+
+    @And("I check the distance in the filters")
+    public void iCheckTheDistanceInTheFilters() {
+        BookingSearchResults bs = new BookingSearchResults(driver, wait);
+        bs.checkDistanceFromCentre();
+    }
+
     //tear down
     @After
     public void quit() {
-        quitDriver();
+        //quitDriver();
     }
+
+
 }

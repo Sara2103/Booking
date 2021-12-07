@@ -62,16 +62,22 @@ public class CucumberSteps extends BaseTest {
                 "6", "1", "3", "4");
     }
 
-    @And("I check the budget")
-    public void iCheckTheBudget() {
+    @And("I check the budget filters")
+    public void iCheckTheBudgetFilters() {
         BookingSearchResults bs = new BookingSearchResults(driver, wait);
         bs.checkBudget();
     }
 
-    @And("I check the distance in the filters")
-    public void iCheckTheDistanceInTheFilters() {
+    @And("I check the distance filters")
+    public void iCheckTheDistanceFilters() {
         BookingSearchResults bs = new BookingSearchResults(driver, wait);
         bs.checkDistanceFromCentre();
+    }
+
+    @And("I select best reviewed and lowest price")
+    public void iSelectBestReviewedAndLowestPrice() {
+        BookingSearchResults bs = new BookingSearchResults(driver, wait);
+        bs.selectBestReviewedLowestPrice();
     }
 
     //tear down
@@ -79,6 +85,4 @@ public class CucumberSteps extends BaseTest {
     public void quit() {
         //quitDriver();
     }
-
-
 }

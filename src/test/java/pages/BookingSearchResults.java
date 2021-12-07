@@ -55,6 +55,9 @@ public class BookingSearchResults extends BasePage {
     @FindBy(xpath = "//div[@class='_962ef834c _9fff1c544 b80262405b']//div[@data-filters-group='distance']/div/h3[contains(text(), 'Lisabon: udaljenost od centra')]/../../div[3]/label")
     WebElement distance;
 
+    @FindBy(xpath = "//div[@class='fd9ddecf26 _a18b9c14c c292f143b4']//ul/li[4]")
+    WebElement bestChoice;
+
 
 
     public void checkBooking(String expectedDest, String expectedDateFrom, String expectedDateTo, String numAdults, String numChildren, String numRooms, String ageValue) throws InterruptedException {
@@ -88,5 +91,9 @@ public class BookingSearchResults extends BasePage {
 
     public void checkDistanceFromCentre(){
         click(distance);
+    }
+
+    public void selectBestReviewedLowestPrice(){
+        click(bestChoice);
     }
 }

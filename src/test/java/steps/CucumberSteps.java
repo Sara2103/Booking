@@ -4,8 +4,10 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.BookingHomePage;
+import pages.BookingSearchResults;
 import tests.BaseTest;
 
 
@@ -51,9 +53,18 @@ public class CucumberSteps extends BaseTest {
         b.clickSearch();
     }
 
+    @Then("I should see desired choice")
+    public void iShouldSeeDesiredChoice() {
+        BookingSearchResults bs = new BookingSearchResults(driver, wait);
+
+        //Date format: day of the week, DD. month YYYY. / Day of the week DD Month YYYY
+        bs.checkBooking("Lisabon", "nedelja, 2. januar 2022.", "četvrtak, 13. januar 2022.",
+                "6", "1", "3", "4");
+    }
+
     //tear down
     @After
     public void quit() {
-        //quitDriver();
+        quitDriver();
     }
 }

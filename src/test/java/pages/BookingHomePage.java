@@ -104,12 +104,6 @@ public class BookingHomePage extends BasePage {
         }
     }
 
-//    String ageChild = "//select[contains(@aria-label, 'Uzrast deteta 1')]";
-//
-//    public void chooseAgeOfChildren(String age){
-//
-//    }
-
     //choose number of person, children and rooms
     public void addedPersonInfo(String adultsNum, String childrenNum, String ageValue, String roomsNum){
 

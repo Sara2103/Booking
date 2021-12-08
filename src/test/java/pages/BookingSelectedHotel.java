@@ -50,7 +50,7 @@ public class BookingSelectedHotel extends BasePage{
 
     public void clickReserve() throws InterruptedException {
         click(btnReserve);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 
 }

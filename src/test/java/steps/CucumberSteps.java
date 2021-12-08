@@ -6,10 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.BookingDetailsInfo;
-import pages.BookingHomePage;
-import pages.BookingSearchResults;
-import pages.BookingSelectedHotel;
+import pages.*;
 import tests.BaseTest;
 
 
@@ -117,6 +114,17 @@ public class CucumberSteps extends BaseTest {
         BookingDetailsInfo bd = new BookingDetailsInfo(driver, wait);
         bd.fillForm("Vaši podaci", "Sara", "Mitrovic", "sara123@gmail.com", "sara123@gmail.com", "Petar Petrovic",
                 "...add more information", "13");
+    }
+
+    //Date format: day of the week.(short), DD. month.(short) YYYY. | Day of the week(short) DD Month(short) YYYY (example: Mon 27 Dec 2021)
+    //Card format: 1111 1111 1111 1111
+    //Expiry date: MMYY
+    @And("I check the last step")
+    public void iCheckTheLastStep() {
+        BookingLastStep bl = new BookingLastStep(driver, wait);
+        bl.checkLast("Poslednji korak", "ned, 2. jan. 2022.", "čet, 13. jan. 2022.", "bs", "146846565",
+                "6435131311111111", "1226", "345",
+                "Žao nam je, nismo mogli da obradimo vašu uplatu. Proverite podatke svoje kartice i pokušajte ponovo.");
     }
 
     //tear down

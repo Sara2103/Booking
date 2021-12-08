@@ -20,6 +20,7 @@ Feature: Booking accommodation
     And I select the apartment
     And I click reserve
     And I fill the form about personal information
+    And I check the last step
 
 
 

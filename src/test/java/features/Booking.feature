@@ -6,8 +6,9 @@ Feature: Booking accommodation
     When I change language "Srpski"
     And I enter destination "Lisabon"
     #Date format DD month YYYY
-    #april ima 2 space izmedju meseca i godine, vodi racuna kako je napisano na UI; 22 feb - 3 mart; vezba "2 januar 2022" "13 januar 2022" | "22 februar 2022" "3 mart 2022"
+    #April is the only month that has 2 spaces between month and year (it's their bug); practice shorted period "2 januar 2022" "13 januar 2022" | test: "22 februar 2022" "3 mart 2022"
     And I select dateFrom and dateTo "2 januar 2022" "13 januar 2022"
+    # "number of adults" | "number of children" | "their age" | "number of rooms"
     And I choose number of person, children and rooms "6" "1" "4" "3"
     And I click button Search
     Then I should see desired choice

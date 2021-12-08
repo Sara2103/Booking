@@ -56,7 +56,7 @@ public class CucumberSteps extends BaseTest {
     public void iShouldSeeDesiredChoice() throws InterruptedException {
         BookingSearchResults bs = new BookingSearchResults(driver, wait);
 
-        //Date format: day of the week, DD. month YYYY. / Day of the week DD Month YYYY     | "nedelja, 2. januar 2022." "četvrtak, 13. januar 2022." | "utorak, 22. februar 2022.", "četvrtak, 3. mart 2022."
+        //DATE FORMAT: day of the week, DD. month YYYY. / Day of the week DD Month YYYY   |(practice short period) "nedelja, 2. januar 2022." "četvrtak, 13. januar 2022." | (test) "utorak, 22. februar 2022.", "četvrtak, 3. mart 2022."
         bs.checkBooking("Lisabon", "nedelja, 2. januar 2022.", "četvrtak, 13. januar 2022.",
                 "6", "1", "3", "4");
     }
@@ -132,7 +132,4 @@ public class CucumberSteps extends BaseTest {
     public void quit() {
         //quitDriver();
     }
-
-
-
 }

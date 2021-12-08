@@ -77,12 +77,14 @@ public class BookingLastStep extends BasePage{
         enterText(expiryDate, txtExpiryDate);
         enterText(cvcNum, txtCVC);
 
+        //back to parent frame because the button is inside
         driver.switchTo().parentFrame();
         click(btnFinishReserve);
 
+        //again to switch to iframe to catch error message
         driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Payment']")));
         assertEquals(errorMessage, txtError);
 
-        System.out.println("Test prosao! :)");
+        System.out.println("Test passed! :)");
     }
 }

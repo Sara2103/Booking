@@ -52,7 +52,7 @@ public class BookingHomePage extends BasePage {
     @FindBy(css = ".sb-searchbox__button")
     WebElement buttonSearch;
 
-    //stavljamo u String jer imamo dosta jezika i parametar ce biti zapravo jezik koji moze da se menja
+    //put in String because have a lot of languages and will use the $ sign which actually changes with the desired language
     String languageLinkXpath = "//div[@class='bui-group bui-group--large']/div[2]//div[contains(text(),'$')]/../..";
 
 
@@ -74,7 +74,9 @@ public class BookingHomePage extends BasePage {
      * @param dateTo   format DD month YYYY
      */
 
-    //comments
+    //Use the while loop beacuse it might happen that the desired month and date aren't displayed by default and I have to click to next arrow to see next month and
+    //on until I get to desired one.
+    //Do same thing for both dates (assume the dateFrom is before the dateTo)
     public void selectDates(String dateFrom, String dateTo) {
 
         click(dates);

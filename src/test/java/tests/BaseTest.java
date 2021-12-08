@@ -39,13 +39,13 @@ public class BaseTest {
         driverManager.quitWebDriver();
     }
 
-    //SCREENSHOT - hvata
+    //SCREENSHOT - catch
     public void takeScreenshot(String fileName) throws IOException {
         File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(f, new File("src/screenshot/" + fileName + "_" + ctm + ".png"));
     }
 
-    //SCREENSHOT - dodaje u Reporter (Allure)
+    //SCREENSHOT - add to Reporter (Allure)
     public void reportScreenshot(String fileName, String allureName) throws IOException {
         takeScreenshot(fileName);
         Path content = Paths.get("src/screenshot/" + fileName + "_" + ctm + ".png");

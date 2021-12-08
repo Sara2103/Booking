@@ -131,7 +131,8 @@ public class CucumberSteps extends BaseTest {
 
     //tear down
     @After
-    public void quit() {
-        //quitDriver();
+    public void quit() throws InterruptedException {
+        Thread.sleep(5000);
+        quitDriver();
     }
 }

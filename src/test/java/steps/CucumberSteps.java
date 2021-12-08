@@ -59,7 +59,7 @@ public class CucumberSteps extends BaseTest {
         BookingSearchResults bs = new BookingSearchResults(driver, wait);
 
         //DATE FORMAT: day of the week, DD. month YYYY. / Day of the week DD Month YYYY   |(practice short period) "nedelja, 2. januar 2022." "četvrtak, 13. januar 2022." | (test) "utorak, 22. februar 2022.", "četvrtak, 3. mart 2022."
-        bs.checkBooking("Lisabon", "nedelja, 2. januar 2022.", "četvrtak, 13. januar 2022.",
+        bs.checkBooking("Lisabon", "utorak, 22. februar 2022.", "četvrtak, 3. mart 2022.",
                 "6", "1", "3", "4");
     }
 
@@ -118,13 +118,13 @@ public class CucumberSteps extends BaseTest {
                 "...add more information", "13");
     }
 
-    //Date format: day of the week.(short), DD. month.(short) YYYY. | Day of the week(short) DD Month(short) YYYY (example: Mon 27 Dec 2021)
+    //Date format: day of the week.(short), DD. month.(short) YYYY. | Day of the week(short) DD Month(short) YYYY (example: Mon 27 Dec 2021) | (practice: "ned, 2. jan. 2022.", "čet, 13. jan. 2022.") | (test: "uto, 22. feb. 2022.", "čet, 3. mar. 2022.")
     //Card format: 1111 1111 1111 1111
     //Expiry date: MMYY
     @And("I check the last step")
     public void iCheckTheLastStep() {
         BookingLastStep bl = new BookingLastStep(driver, wait);
-        bl.checkLast("Poslednji korak", "ned, 2. jan. 2022.", "čet, 13. jan. 2022.", "bs", "146846565",
+        bl.checkLast("Poslednji korak", "uto, 22. feb. 2022.", "čet, 3. mar. 2022.", "bs", "146846565",
                 "6435131311111111", "1226", "345",
                 "Žao nam je, nismo mogli da obradimo vašu uplatu. Proverite podatke svoje kartice i pokušajte ponovo.");
     }

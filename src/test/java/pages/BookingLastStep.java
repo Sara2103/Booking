@@ -22,10 +22,10 @@ public class BookingLastStep extends BasePage {
     @FindBy(css = ".bui-nav-progress.bui-nav-progress--horizontal > li:nth-child(5) > strong")
     WebElement lastStep;
 
-    @FindBy(xpath = "//span[@class='bui-date__title' and contains(text(), 'ned, 2. jan. 2022.')]")
+    @FindBy(xpath = "//span[@class='bui-date__title' and contains(text(), 'uto, 22. feb. 2022.')]") //ned, 2. jan. 2022.
     WebElement dateFrom;
 
-    @FindBy(xpath = "//span[@class='bui-date__title' and contains(text(), 'čet, 13. jan. 2022.')]")
+    @FindBy(xpath = "//span[@class='bui-date__title' and contains(text(), 'čet, 3. mar. 2022.')]") //čet, 13. jan. 2022.
     WebElement dateTo;
 
     @FindBy(css = "#cc1")

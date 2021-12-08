@@ -1,11 +1,14 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.util.ArrayList;
 
 public class BookingSearchResults extends BasePage {
 
@@ -58,6 +61,9 @@ public class BookingSearchResults extends BasePage {
     @FindBy(xpath = "//div[@class='fd9ddecf26 _a18b9c14c c292f143b4']//ul/li[4]")
     WebElement bestChoice;
 
+    @FindBy(xpath = "//div[@class='_fe1927d9e _0811a1b54 _a8a1be610 _022ee35ec b9c27d6646 fb3c4512b4 fc21746a73'][1]//span[contains(text(), 'Prikaži raspoloživost')]")
+    WebElement btnSeeAvailability;
+
 
 
     public void checkBooking(String expectedDest, String expectedDateFrom, String expectedDateTo, String numAdults, String numChildren, String numRooms, String ageValue) throws InterruptedException {
@@ -95,5 +101,17 @@ public class BookingSearchResults extends BasePage {
 
     public void selectBestReviewedLowestPrice(){
         click(bestChoice);
+    }
+
+
+    public void clickFirstChoice() throws InterruptedException {
+        click(btnSeeAvailability); //open second tab, but driver is on the first
+
+        Thread.sleep(6000);
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0)); //on the first tab
+
+        Thread.sleep(3000);
+        driver.switchTo().window(tabs.get(1)); //on the second tab
     }
 }

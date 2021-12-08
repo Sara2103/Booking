@@ -8,13 +8,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.BookingHomePage;
 import pages.BookingSearchResults;
+import pages.BookingSelectedHotel;
 import tests.BaseTest;
 
 
 public class CucumberSteps extends BaseTest {
 
     @Before
-    public void init(){
+    public void init() {
         init("Chrome", "96", 30);
     }
 
@@ -80,9 +81,30 @@ public class CucumberSteps extends BaseTest {
         bs.selectBestReviewedLowestPrice();
     }
 
+    @And("I click the first best choice")
+    public void iClickTheFirstBestChoice() throws InterruptedException {
+        BookingSearchResults bs = new BookingSearchResults(driver, wait);
+        bs.clickFirstChoice();
+    }
+
+    @And("I save booking")
+    public void iSaveBooking() {
+        BookingSelectedHotel bsh = new BookingSelectedHotel(driver, wait);
+        bsh.saveBooking("Izuzetan");
+    }
+
+//    @And("I reserve the hotel")
+//    public void iReserveTheHotel() {
+//        BookingSelectedHotel bsh = new BookingSelectedHotel(driver, wait);
+//        bsh.reserve();
+//    }
+
+
     //tear down
     @After
     public void quit() {
         //quitDriver();
     }
+
+
 }

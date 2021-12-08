@@ -14,6 +14,10 @@ Feature: Booking accommodation
     And I check the budget filters
     And I check the distance filters
     And I select best reviewed and lowest price
+    And I click the first best choice
+    And I save booking
+    #And I reserve the hotel
+
 
 
 

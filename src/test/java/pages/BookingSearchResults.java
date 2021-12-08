@@ -64,7 +64,6 @@ public class BookingSearchResults extends BasePage {
     WebElement btnSeeAvailability;
 
 
-
     public void checkBooking(String expectedDest, String expectedDateFrom, String expectedDateTo, String numAdults, String numChildren, String numRooms, String ageValue) throws InterruptedException {
 
         Assert.assertEquals(destination.getAttribute("value"), expectedDest);
@@ -84,21 +83,21 @@ public class BookingSearchResults extends BasePage {
         Thread.sleep(2000);
     }
 
-    public void scroll(){
+    public void scroll() {
         scrollToWebElement(scToDistance);
     }
 
     //Filters
-    public void checkBudget(){
+    public void checkBudget() {
         click(budget);
         scroll();
     }
 
-    public void checkDistanceFromCentre(){
+    public void checkDistanceFromCentre() {
         click(distance);
     }
 
-    public void selectBestReviewedLowestPrice(){
+    public void selectBestReviewedLowestPrice() {
         click(bestChoice);
     }
 
@@ -107,7 +106,7 @@ public class BookingSearchResults extends BasePage {
         click(btnSeeAvailability); //open second tab, but driver is on the first
 
         Thread.sleep(6000);
-        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(0)); //on the first tab
 
         Thread.sleep(3000);

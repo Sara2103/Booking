@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BookingLastStep extends BasePage{
+public class BookingLastStep extends BasePage {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -60,7 +60,7 @@ public class BookingLastStep extends BasePage{
 
 
     public void checkLast(String expectedInfo, String expectedDate1, String expectedDate2, String valueCountry, String txtPhone, String txtCardNum,
-                          String txtExpiryDate, String txtCVC, String txtError){
+                          String txtExpiryDate, String txtCVC, String txtError) {
         assertEquals(lastStep, expectedInfo);
         assertEquals(dateFrom, expectedDate1);
         assertEquals(dateTo, expectedDate2);

@@ -9,6 +9,8 @@ import io.cucumber.java.en.When;
 import pages.*;
 import tests.BaseTest;
 
+import java.io.IOException;
+
 
 public class CucumberSteps extends BaseTest {
 
@@ -110,7 +112,7 @@ public class CucumberSteps extends BaseTest {
     }
 
     @And("I fill the form about personal information")
-    public void iFillTheFormAboutPersonalInformation() throws InterruptedException {
+    public void iFillTheFormAboutPersonalInformation() throws InterruptedException, IOException {
         BookingDetailsInfo bd = new BookingDetailsInfo(driver, wait);
         bd.fillForm("Vaši podaci", "Sara", "Mitrovic", "sara123@gmail.com", "sara123@gmail.com", "Petar Petrovic",
                 "...add more information", "13");

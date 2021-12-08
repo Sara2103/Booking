@@ -6,7 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BookingDetailsInfo extends BasePage{
+import java.io.IOException;
+
+public class BookingDetailsInfo extends BasePage {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -63,17 +65,17 @@ public class BookingDetailsInfo extends BasePage{
     @FindBy(xpath = "//h2[contains(text(),'Recite nam koji su vaši posebni zahtevi.')]")
     WebElement scroll2;
 
-    public void scrollFirst(){
+    public void scrollFirst() {
         scrollToWebElement(scroll1);
     }
 
-    public void scrollSecond(){
+    public void scrollSecond() {
         scrollToWebElement(scroll2);
     }
 
 
     public void fillForm(String expectedInfo, String txtFirstName, String txtLastName, String txtEmail, String txtConfirm, String txtGuest, String txtRemarks, String timeValue)
-            throws InterruptedException {
+            throws InterruptedException, IOException {
         assertEquals(personalInfo, expectedInfo);
 
         scrollFirst();
@@ -85,6 +87,9 @@ public class BookingDetailsInfo extends BasePage{
         enterText(emailConfirm, txtConfirm);
         click(mainGuest);
 
+        Thread.sleep(3000);
+        takeScreenshot("FillForm");
+
         enterText(guestName, txtGuest);
 
         //click(car); sometimes is not option
@@ -95,6 +100,5 @@ public class BookingDetailsInfo extends BasePage{
         selectByValue(time, timeValue);
 
         click(book);
-
     }
 }

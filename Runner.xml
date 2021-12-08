@@ -9,7 +9,7 @@
 
     <test name="Test name">
         <classes>
-           <class name="runners.GeneralRunner"/>
+            <class name="runners.GeneralRunner"/>
         </classes>
     </test>
 </suite>

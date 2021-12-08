@@ -124,7 +124,7 @@ public class BasePage {
     }
 
     //SCROLL
-    public void scrollToWebElement(WebElement el){
+    public void scrollToWebElement(WebElement el) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", el);
     }
 }

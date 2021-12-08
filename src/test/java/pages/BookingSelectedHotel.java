@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BookingSelectedHotel extends BasePage{
+public class BookingSelectedHotel extends BasePage {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -19,7 +19,7 @@ public class BookingSelectedHotel extends BasePage{
     }
 
 
-    @FindBy(xpath= "//div[@id='js--hp-gallery-scorecard']//div[contains(text(), 'Izuzetan')]")
+    @FindBy(xpath = "//div[@id='js--hp-gallery-scorecard']//div[contains(text(), 'Izuzetan')]")
     WebElement comment;
 
     @FindBy(css = "#wl--wl_entrypoint_hp_head")
@@ -35,16 +35,16 @@ public class BookingSelectedHotel extends BasePage{
     WebElement btnReserve;
 
 
-    public void saveBooking(String expectedTxt){
+    public void saveBooking(String expectedTxt) {
         assertEquals(comment, expectedTxt);
         click(btnSave);
     }
 
-    public void reserve(){
+    public void reserve() {
         click(btnBook);
     }
 
-    public void selectFirstApartment(String valueOption){
+    public void selectFirstApartment(String valueOption) {
         selectByValue(firstApartment, valueOption);
     }
 
@@ -52,5 +52,4 @@ public class BookingSelectedHotel extends BasePage{
         click(btnReserve);
         Thread.sleep(3000);
     }
-
 }

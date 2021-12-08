@@ -56,7 +56,6 @@ public class BookingHomePage extends BasePage {
     String languageLinkXpath = "//div[@class='bui-group bui-group--large']/div[2]//div[contains(text(),'$')]/../..";
 
 
-
     //methods
     public void chooseLanguage(String language) {
         click(languageIcon);
@@ -107,20 +106,20 @@ public class BookingHomePage extends BasePage {
     }
 
     //choose number of person, children and rooms
-    public void addedPersonInfo(String adultsNum, String childrenNum, String ageValue, String roomsNum){
+    public void addedPersonInfo(String adultsNum, String childrenNum, String ageValue, String roomsNum) {
 
         click(personInfo);
 
-        for(int i = 2; i < Integer.parseInt(adultsNum); i++){
+        for (int i = 2; i < Integer.parseInt(adultsNum); i++) {
             click(adults);
         }
 
-        for(int i = 0; i < Integer.parseInt(childrenNum); i++){
+        for (int i = 0; i < Integer.parseInt(childrenNum); i++) {
             click(children);
         }
         selectByValue(ageOfChild, ageValue);
 
-        for(int i = 1; i < Integer.parseInt(roomsNum); i++){
+        for (int i = 1; i < Integer.parseInt(roomsNum); i++) {
             click(rooms);
         }
     }

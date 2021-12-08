@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.BookingDetailsInfo;
 import pages.BookingHomePage;
 import pages.BookingSearchResults;
 import pages.BookingSelectedHotel;
@@ -58,7 +59,7 @@ public class CucumberSteps extends BaseTest {
     public void iShouldSeeDesiredChoice() throws InterruptedException {
         BookingSearchResults bs = new BookingSearchResults(driver, wait);
 
-        //Date format: day of the week, DD. month YYYY. / Day of the week DD Month YYYY
+        //Date format: day of the week, DD. month YYYY. / Day of the week DD Month YYYY     | "nedelja, 2. januar 2022." "četvrtak, 13. januar 2022." | "utorak, 22. februar 2022.", "četvrtak, 3. mart 2022."
         bs.checkBooking("Lisabon", "nedelja, 2. januar 2022.", "četvrtak, 13. januar 2022.",
                 "6", "1", "3", "4");
     }
@@ -93,18 +94,37 @@ public class CucumberSteps extends BaseTest {
         bsh.saveBooking("Izuzetan");
     }
 
-//    @And("I reserve the hotel")
-//    public void iReserveTheHotel() {
-//        BookingSelectedHotel bsh = new BookingSelectedHotel(driver, wait);
-//        bsh.reserve();
-//    }
+    @And("I reserve the hotel")
+    public void iReserveTheHotel() {
+        BookingSelectedHotel bsh = new BookingSelectedHotel(driver, wait);
+        bsh.reserve();
+    }
 
+    @And("I select the apartment")
+    public void iSelectTheApartment() {
+        BookingSelectedHotel bsh = new BookingSelectedHotel(driver, wait);
+        bsh.selectFirstApartment("1");
+    }
+
+    @And("I click reserve")
+    public void iClickReserve() throws InterruptedException {
+        BookingSelectedHotel bsh = new BookingSelectedHotel(driver, wait);
+        bsh.clickReserve();
+    }
+
+    @And("I fill the form about personal information")
+    public void iFillTheFormAboutPersonalInformation() throws InterruptedException {
+        BookingDetailsInfo bd = new BookingDetailsInfo(driver, wait);
+        bd.fillForm("Vaši podaci", "Sara", "Mitrovic", "sara123@gmail.com", "sara123@gmail.com", "Petar Petrovic",
+                "...add more information", "13");
+    }
 
     //tear down
     @After
     public void quit() {
         //quitDriver();
     }
+
 
 
 }

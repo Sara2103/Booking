@@ -28,15 +28,29 @@ public class BookingSelectedHotel extends BasePage{
     @FindBy(css = "#hp_book_now_button")
     WebElement btnBook;
 
+    @FindBy(xpath = "//div[@class='hprt-block'][1]//select[@class='hprt-nos-select js-hprt-nos-select']")
+    WebElement firstApartment;
+
+    @FindBy(xpath = "//span[@class='bui-button__text js-reservation-button__text']")
+    WebElement btnReserve;
+
 
     public void saveBooking(String expectedTxt){
         assertEquals(comment, expectedTxt);
         click(btnSave);
-        System.out.println("radi");
     }
 
-//    public void reserve(){
-//        click(btnBook);
-//        System.out.println("radi");
-//    }
+    public void reserve(){
+        click(btnBook);
+    }
+
+    public void selectFirstApartment(String valueOption){
+        selectByValue(firstApartment, valueOption);
+    }
+
+    public void clickReserve() throws InterruptedException {
+        click(btnReserve);
+        Thread.sleep(5000);
+    }
+
 }

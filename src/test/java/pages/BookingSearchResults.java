@@ -51,7 +51,7 @@ public class BookingSearchResults extends BasePage {
     @FindBy(xpath = "//div[@class='_962ef834c _9fff1c544 b80262405b']//div[@data-filters-group='distance']/div/h3[contains(text(), 'Lisabon: udaljenost od centra')]")
     WebElement scToDistance;
 
-    @FindBy(xpath = "//div[@class='_962ef834c _9fff1c544 b80262405b']//div[@data-filters-group='pri']/div/h3[contains(text(), 'Vaš budžet (po noćenju)')]/../../div[2]/div[3]")
+    @FindBy(xpath = "//div[@class='_962ef834c _9fff1c544 b80262405b']//div[@data-filters-group='pri']/div/h3[contains(text(), 'Vaš budžet (po noćenju)')]/../../div[2]/div[6]")
     WebElement budget;
 
     @FindBy(xpath = "//div[@class='_962ef834c _9fff1c544 b80262405b']//div[@data-filters-group='distance']/div/h3[contains(text(), 'Lisabon: udaljenost od centra')]/../../div[3]/label")
